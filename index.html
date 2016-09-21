@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="pqeApp">
+<head>
+	<title>Raw Data Access</title>
+	<!-- <base href="/"> -->
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<!-- Header -->
+	<div ng-include="'html/partials/header.html'"></div>
+	<div class="box-container">
+		<div class="container body-container">
+			<div ng-include="'html/partials/tabs.html'"></div>
+			<div ui-view></div>
+		</div>
+	</div>
+	<div ng-include="'html/partials/footer.html'"></div>
+	<modal title="Error" visible="$root.errorModal" id="error-modal" style="display:none;">
+		<div class="modal-body">
+			<p class="error-response" ng-if="$root.errorCode == 403">Your session has expired or you are not authorized. Please go to <a href="{{$root.qcrLogin}}">QCR</a> and sign in again.</p>
+			<p class="error-response" ng-if="$root.errorCode == 400">Download links are not available. Check with system admin or network connection. </p>
+			<p class="error-response" ng-if="$root.errorCode == 404">Service not found. Check with system admin or network connection. </p>
+			<p class="error-response" ng-if="$root.errorCode == 680">You are not authorized. Check with system admin.</p>
+		</div>
+	</modal>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

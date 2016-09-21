@@ -1,0 +1,29 @@
+{
+  "name": "sp",
+  "description": "Experimenting local server set up",
+  "main": "index.js",
+  "authors": [
+    "Spoluru"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "SP",
+    "UI"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "ui-router#^0.2.18"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
+  }
+}
